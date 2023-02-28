@@ -17,6 +17,8 @@
 		085BC666298A7FEE0029F2C4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085BC665298A7FEE0029F2C4 /* Service.swift */; };
 		085BC668298A81690029F2C4 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085BC667298A81690029F2C4 /* Landmark.swift */; };
 		085BC66A298AA7CC0029F2C4 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085BC669298AA7CC0029F2C4 /* CollectionCell.swift */; };
+		08B61BF129ADF38A0098AC6D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B61BF029ADF38A0098AC6D /* DetailViewController.swift */; };
+		08B61BF329AE1A320098AC6D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B61BF229AE1A320098AC6D /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		085BC665298A7FEE0029F2C4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		085BC667298A81690029F2C4 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		085BC669298AA7CC0029F2C4 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		08B61BF029ADF38A0098AC6D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		08B61BF229AE1A320098AC6D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				085BC665298A7FEE0029F2C4 /* Service.swift */,
 				085BC667298A81690029F2C4 /* Landmark.swift */,
 				085BC669298AA7CC0029F2C4 /* CollectionCell.swift */,
+				08B61BF029ADF38A0098AC6D /* DetailViewController.swift */,
+				08B61BF229AE1A320098AC6D /* SearchViewController.swift */,
 			);
 			path = "IOS avance projet";
 			sourceTree = "<group>";
@@ -153,10 +159,12 @@
 			files = (
 				085BC652298A7D460029F2C4 /* ViewController.swift in Sources */,
 				085BC666298A7FEE0029F2C4 /* Service.swift in Sources */,
+				08B61BF329AE1A320098AC6D /* SearchViewController.swift in Sources */,
 				085BC64E298A7D460029F2C4 /* AppDelegate.swift in Sources */,
 				085BC650298A7D460029F2C4 /* SceneDelegate.swift in Sources */,
 				085BC668298A81690029F2C4 /* Landmark.swift in Sources */,
 				085BC66A298AA7CC0029F2C4 /* CollectionCell.swift in Sources */,
+				08B61BF129ADF38A0098AC6D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

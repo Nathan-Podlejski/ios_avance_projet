@@ -27,6 +27,7 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+
         collectionView.collectionViewLayout = createLayout()
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, itemIdentifier) -> UICollectionViewCell? in
@@ -62,6 +63,7 @@ class ViewController: UICollectionViewController {
         
         return snapshot
     }
+    
 
     private func createLayout () -> UICollectionViewCompositionalLayout {
         
@@ -119,6 +121,18 @@ class ViewController: UICollectionViewController {
         layout.configuration = config
         return layout
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if ( segue.identifier == "detailSegue") {
+            let navVC = segue.destination as! UINavigationController
+            let destView = navVC.topViewController as! DetailViewController
+            destView.landmark = landmarks[collectionView.indexPath(for: sender as! UICollectionViewCell)!.row]
+        }
+    }
+    
+    
 }
+
+
+
 
