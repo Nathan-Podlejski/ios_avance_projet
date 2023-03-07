@@ -75,15 +75,15 @@
             </objects>
             <point key="canvasLocation" x="1078.6259541984732" y="-76.056338028169023"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="oTj-ai-TS9">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="Jz5-Kf-Jvt" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Jz5-Kf-Jvt" customClass="SearchViewController" customModule="IOS_avance_projet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Uur-ec-I6J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DFp-GL-CwK" style="IBUITableViewCellStyleDefault" id="SyW-jK-xyy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="DFp-GL-CwK" style="IBUITableViewCellStyleDefault" id="SyW-jK-xyy">
                                 <rect key="frame" x="20" y="55.333332061767578" width="353" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SyW-jK-xyy" id="iMc-GW-i92">
@@ -99,6 +99,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jdT-QI-vFg" kind="presentation" identifier="detailSegue" id="H2x-bh-3hw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -107,7 +110,16 @@
                             <outlet property="delegate" destination="Jz5-Kf-Jvt" id="5QG-My-GhP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cSu-cQ-K6w"/>
+                    <navigationItem key="navigationItem" id="cSu-cQ-K6w">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="TgQ-SF-ogP">
+                            <connections>
+                                <action selector="cancelBtnClick:" destination="Jz5-Kf-Jvt" id="bH6-Bn-glv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelBtn" destination="TgQ-SF-ogP" id="oXY-VY-d4w"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5c-E3-GuD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,13 +139,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-uq-Ddb" userLabel="DescriptionDetail">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqn-uq-Ddb" userLabel="DescriptionDetail">
                                 <rect key="frame" x="16" y="435" width="361" height="303"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="361" id="haF-ft-lGY"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -230,6 +241,9 @@
             <point key="canvasLocation" x="2041.9847328244275" y="-819.0140845070423"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="H2x-bh-3hw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -76,14 +76,20 @@ class ViewController: UICollectionViewController {
                         
             switch section {
             case .featured :
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                var itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                       heightDimension: .fractionalHeight(1.0))
+                if (collectionLayoutEnvironment.traitCollection.horizontalSizeClass.rawValue == 2 && collectionLayoutEnvironment.traitCollection.verticalSizeClass.rawValue == 2)
+                {
+                    itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                                                      heightDimension: .fractionalHeight(1))
+                }
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
                 let containerGroup = NSCollectionLayoutGroup.horizontal(
                     layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                        heightDimension: .fractionalHeight(0.4)),
                     subitems: [item])
+                
                 
                 let section = NSCollectionLayoutSection(group: containerGroup)
                 section.orthogonalScrollingBehavior = .groupPaging
@@ -94,17 +100,21 @@ class ViewController: UICollectionViewController {
             case .lists:
 
                 var itemSize: NSCollectionLayoutSize
+                var groupSize: NSCollectionLayoutSize
                 if (collectionLayoutEnvironment.traitCollection.horizontalSizeClass.rawValue == 2 && collectionLayoutEnvironment.traitCollection.verticalSizeClass.rawValue == 2) {
-                    itemSize  = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                    itemSize  = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                        heightDimension: .fractionalHeight(0.5))
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.4),
+                                                           heightDimension: .fractionalWidth(0.8))
                 } else {
                     itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                          heightDimension: .fractionalHeight(1.0))
+                    groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.6),
+                                                           heightDimension: .fractionalWidth(0.6))
                 }
                 
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.6),
-                                                       heightDimension: .fractionalWidth(0.6))
+
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                                subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
