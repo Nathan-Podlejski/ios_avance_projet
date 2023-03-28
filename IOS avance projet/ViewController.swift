@@ -95,7 +95,6 @@ class ViewController: UICollectionViewController {
                 section.orthogonalScrollingBehavior = .groupPaging
             
                 return section
-
                 
             case .lists:
 

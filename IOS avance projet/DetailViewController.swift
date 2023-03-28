@@ -21,6 +21,7 @@ class DetailViewController: UIViewController  {
         ImageDetail.image = landmark?.image
         LocationDetail.text = (landmark?.city ?? "") + " " + (landmark?.state ?? "") + " " + (landmark?.park ?? "")
         DescriptionDetail.text = landmark?.description
+        
     }
     
     @IBAction func CancelBtnClick(_ sender: Any) {
